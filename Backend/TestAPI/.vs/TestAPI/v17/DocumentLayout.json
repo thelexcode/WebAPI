@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Gabriel Semeniuc\\OneDrive - Blue Engineering S.r.l\\Desktop\\Esame Finale\\Backend\\TestAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8077A0BA-A635-4892-BF6B-211750C90A91}|TestAPI\\TestAPI.csproj|c:\\users\\gabriel semeniuc\\onedrive - blue engineering s.r.l\\desktop\\esame finale\\backend\\testapi\\testapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8077A0BA-A635-4892-BF6B-211750C90A91}|TestAPI\\TestAPI.csproj|solutionrelative:testapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8077A0BA-A635-4892-BF6B-211750C90A91}|TestAPI\\TestAPI.csproj|c:\\users\\gabriel semeniuc\\onedrive - blue engineering s.r.l\\desktop\\esame finale\\backend\\testapi\\testapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8077A0BA-A635-4892-BF6B-211750C90A91}|TestAPI\\TestAPI.csproj|solutionrelative:testapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8077A0BA-A635-4892-BF6B-211750C90A91}|TestAPI\\TestAPI.csproj|c:\\users\\gabriel semeniuc\\onedrive - blue engineering s.r.l\\desktop\\esame finale\\backend\\testapi\\testapi\\services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8077A0BA-A635-4892-BF6B-211750C90A91}|TestAPI\\TestAPI.csproj|solutionrelative:testapi\\services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Gabriel Semeniuc\\OneDrive - Blue Engineering S.r.l\\Desktop\\Esame Finale\\Backend\\TestAPI\\TestAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "TestAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\Gabriel Semeniuc\\OneDrive - Blue Engineering S.r.l\\Desktop\\Esame Finale\\Backend\\TestAPI\\TestAPI\\appsettings.json",
+              "RelativeToolTip": "TestAPI\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-03T12:37:57.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Semeniuc\\OneDrive - Blue Engineering S.r.l\\Desktop\\Esame Finale\\Backend\\TestAPI\\TestAPI\\Program.cs",
+              "RelativeDocumentMoniker": "TestAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\Gabriel Semeniuc\\OneDrive - Blue Engineering S.r.l\\Desktop\\Esame Finale\\Backend\\TestAPI\\TestAPI\\Program.cs",
+              "RelativeToolTip": "TestAPI\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T12:37:55.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthServices.cs",
+              "DocumentMoniker": "C:\\Users\\Gabriel Semeniuc\\OneDrive - Blue Engineering S.r.l\\Desktop\\Esame Finale\\Backend\\TestAPI\\TestAPI\\Services\\AuthServices.cs",
+              "RelativeDocumentMoniker": "TestAPI\\Services\\AuthServices.cs",
+              "ToolTip": "C:\\Users\\Gabriel Semeniuc\\OneDrive - Blue Engineering S.r.l\\Desktop\\Esame Finale\\Backend\\TestAPI\\TestAPI\\Services\\AuthServices.cs",
+              "RelativeToolTip": "TestAPI\\Services\\AuthServices.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAowC0AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-03T12:28:19.03Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

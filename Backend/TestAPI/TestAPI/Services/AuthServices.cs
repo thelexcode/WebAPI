@@ -7,6 +7,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using TestAPI.Models;
 using TestAPI.Repository;
+using TestAPI.Request;
+using BCrypt.Net;
+using Org.BouncyCastle.Crypto.Generators;
 
 namespace TestAPI.Services
 {
@@ -24,14 +27,30 @@ namespace TestAPI.Services
         public async Task<string> AuthenticateUserAsync(string email, string password)
         {
             // Verifica le credenziali dell'utente
-            var user = await _userRepository.GetUserByEmailAndPasswordAsync(email, password);
+            var user = await _userRepository.GetUserByEmailAsync(email);
 
-            if (user == null)
-                return null; 
+            if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
+                return null;
 
             // Genera il token JWT
             var token = GenerateJwtToken(user);
             return token;
+        }
+
+        public async Task<bool> RegisterUserAsync(RegisterDto registerRequest)
+        {
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(registerRequest.Password);
+
+            var user = new Users
+            {
+                FirstName = registerRequest.FirstName,
+                LastName = registerRequest.LastName,
+                Email = registerRequest.Email,
+                PasswordHash = hashedPassword,
+                RoleId = 1 // Set default RoleId
+            };
+
+            return await _userRepository.CreateUserAsync(user);
         }
 
         private string GenerateJwtToken(Users user)
@@ -47,9 +66,8 @@ namespace TestAPI.Services
                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                     new Claim(ClaimTypes.Name, $"{user.FirstName} {user.LastName}"),
                     new Claim(ClaimTypes.Email, user.Email),
-          
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(tokenLifetime), 
+                Expires = DateTime.UtcNow.AddMinutes(tokenLifetime),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);

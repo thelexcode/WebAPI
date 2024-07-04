@@ -156,3 +156,4 @@ C:\Users\Gabriel Semeniuc\OneDrive - Blue Engineering S.r.l\Desktop\Esame Finale
 C:\Users\Gabriel Semeniuc\OneDrive - Blue Engineering S.r.l\Desktop\Esame Finale\Backend\TestAPI\TestAPI\obj\Debug\net8.0\TestAPI.pdb
 C:\Users\Gabriel Semeniuc\OneDrive - Blue Engineering S.r.l\Desktop\Esame Finale\Backend\TestAPI\TestAPI\obj\Debug\net8.0\TestAPI.genruntimeconfig.cache
 C:\Users\Gabriel Semeniuc\OneDrive - Blue Engineering S.r.l\Desktop\Esame Finale\Backend\TestAPI\TestAPI\obj\Debug\net8.0\ref\TestAPI.dll
+C:\Users\Gabriel Semeniuc\OneDrive - Blue Engineering S.r.l\Desktop\Esame Finale\Backend\TestAPI\TestAPI\bin\Debug\net8.0\BCrypt.Net-Next.dll

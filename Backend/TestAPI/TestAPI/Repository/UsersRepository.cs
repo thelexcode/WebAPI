@@ -2,11 +2,12 @@
 using TestAPI.Data;
 using TestAPI.Models;
 using Dapper;
+using System.Security.Cryptography;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
 namespace TestAPI.Repository
 {
     public class UsersRepository
-    
     {
         private readonly DapperContext _context;
 
@@ -34,11 +35,9 @@ namespace TestAPI.Repository
         {
             using IDbConnection connection = _context.CreateConnection();
             connection.Open();
-            var user = await connection.QuerySingleOrDefaultAsync<Users>("SELECT Id, FirstName, LastName, Email FROM Users WHERE Id = @Id", new { Id = id });
+            var user = await connection.QuerySingleOrDefaultAsync<Users>("SELECT Id, FirstName, LastName, Email, RoleId FROM Users WHERE Id = @Id", new { Id = id });
             return user;
         }
-
-
 
         public async Task<Users> GetUserByEmailAndPasswordAsync(string email, string passwordHash)
         {
@@ -63,8 +62,8 @@ namespace TestAPI.Repository
                 connection.Open();
 
                 string query = @"
-                    INSERT INTO Users (FirstName, LastName, Email, PasswordHash)
-                    VALUES (@FirstName, @LastName, @Email, @PasswordHash)
+                    INSERT INTO Users (FirstName, LastName, Email, PasswordHash, RoleId)
+                    VALUES (@FirstName, @LastName, @Email, @PasswordHash, @RoleId)
                 ";
 
                 var result = await connection.ExecuteAsync(query, new
@@ -73,18 +72,50 @@ namespace TestAPI.Repository
                     user.LastName,
                     user.Email,
                     user.PasswordHash,
-
+                    user.RoleId // Added RoleId parameter
                 });
 
                 return result > 0;
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine($"Error in UsersRepository.CreateUserAsync: {ex.Message}");
                 throw;
             }
-
         }
-    }      
+
+        public async Task<Users> GetUserByEmailAsync(string email)
+        {
+            using IDbConnection connection = _context.CreateConnection();
+            connection.Open();
+
+            string query = @"
+                SELECT Id, FirstName, LastName, Email, PasswordHash, RoleId
+                FROM Users
+                WHERE Email = @Email
+            ";
+
+            var user = await connection.QuerySingleOrDefaultAsync<Users>(query, new { Email = email });
+            return user;
+        }
+
+
+        public string HashPassword(string password)
+        {
+            byte[] salt = new byte[128 / 8];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(salt);
+            }
+
+            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                password: password,
+                salt: salt,
+                prf: KeyDerivationPrf.HMACSHA1,
+                iterationCount: 10000,
+                numBytesRequested: 256 / 8));
+
+            return hashed;
+        }
+    }
 }

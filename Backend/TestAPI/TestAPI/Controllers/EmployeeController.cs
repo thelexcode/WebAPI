@@ -35,7 +35,7 @@ namespace TestAPI.Controllers
 
         // POST: api/employees
         [HttpPost]
-        public async Task<ActionResult<Employee>> CreateEmployee(EmployeeRequest employeeRequest)
+        public async Task<ActionResult<Employee>> CreateEmployee(EmployeeDto employeeRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace TestAPI.Controllers
         }
         // PUT: api/employees/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateEmployee(int id, EmployeeRequest employeeRequest)
+        public async Task<IActionResult> UpdateEmployee(int id, EmployeeDto employeeRequest)
         {
             if (id != employeeRequest.Id)
             {
@@ -93,7 +93,7 @@ namespace TestAPI.Controllers
         public async Task<IActionResult> DeleteEmployee(int id)
         {
             var success = await _employeeRepository.DeleteEmployeeAsync(id);
-            if (!success)
+            if (!success) 
             {
                 return NotFound();
             }
